@@ -1,19 +1,51 @@
-require('./connection.js');
+var connection = require('./connection.js');
 
-var queries = function (burger){
+var tableName = "allcharacters";
 
-	query.connection("SELECT * FROM burgers", [],function(err, res){
-		if(err) throw err;
-	});
+var orm = {
 
-	query.connection("INSERT INTO burgers WHERE ?", [],function(err, res){
-		if(err) throw err;
-	});
 
-	query.connection("UPDATE burgers WHERE ?", [],function(err, res){
-		if(err) throw err;
-	});
+	selectAll: function(callback){
+		var s = 'SELECT * FROM ' + tableName;
 
-}
+		connection.query(s, function(err, result) {
+	 
+            callback(result);
 
-module.exports = queries;
+        });
+	},
+
+
+	updateOne: function(name, callback){
+		var s = 'select * from ' + tableName + ' where routeName=?';
+
+		connection.query(s,[name], function(err, result) {
+	 
+            callback(result);
+        });
+
+	},
+
+
+	insertOne: function(character, callback){
+
+		// Creating a routeName so its easy to search. 
+		var routeName = character.name.replace(/\s+/g, '').toLowerCase();
+		console.log(routeName);
+
+		var s = "INSERT INTO " + tableName + " (routeName, name, role, age, forcePoints) VALUES (?,?,?,?,?)";
+
+		connection.query(s,[id, burger_name, devoured, date], function(err, result) {
+            
+            callback(result);
+
+        });
+
+	}
+
+
+};
+
+module.exports = orm;
+
+
