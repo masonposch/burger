@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 });
 
 
-var getConnection (function(db){
+var getConnection = (function(db){
 
 	connection.connect(function(err){
 		if (err) throw err;
