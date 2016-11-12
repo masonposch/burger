@@ -22,5 +22,3 @@ var getConnection = (function(db){
 
 module.exports = getConnection;
 
-
-connection.end();
