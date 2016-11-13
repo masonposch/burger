@@ -1,26 +1,23 @@
 {
-  "name": "burger",
+  "name": "mvc_design",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/masonposch/burger.git"
-  },
-  "author": "mason",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/masonposch/burger/issues"
-  },
-  "homepage": "https://github.com/masonposch/burger#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
+    "express-handlebars": "^2.0.1",
+    "handlebars-helper-css": "^0.1.0",
     "method-override": "^2.3.6",
     "mysql": "^2.12.0"
-  }
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  },
+  "description": ""
 }

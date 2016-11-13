@@ -1,24 +1,21 @@
+/*
+Here is where you make the connection to the database and export and used by the O.R.M.
+*/
 var mysql = require('mysql');
-var prompt = require('prompt');
-
-
 var connection = mysql.createConnection({
-	host: 'localhost',
 	port: 3306,
+	host: 'localhost',
 	user: 'root',
 	password: '',
-	database: 'burgers_db'
+	database: 'burgerDB'
 });
 
-
-var getConnection = (function(db){
-
-	connection.connect(function(err){
-		if (err) throw err;
-		console.log("connected as id" + connection.threadID);
-	});
-
+connection.connect(function (err) {
+	if (err) {
+		console.error('error connecting: ' + err.stack);
+		return;
+	}
+	console.log('connected as id ' + connection.threadId);
 });
 
-module.exports = getConnection;
-
+module.exports = connection;
