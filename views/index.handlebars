@@ -1,8 +1,14 @@
 <h1>Burgers!</h1>
 
-<h2>So many choices!</h2>
+<img src="http://www.clker.com/cliparts/h/8/q/L/j/b/burger-clip-md.png" class="center"/>
 
-<ul>
+<div class="content">
+
+<div class="theBurgerChoices">
+
+<h2 id="burgerChoices">So many choices!</h2>
+
+<ul id="burgerChoicesList">
   {{#each burgers}}
     {{#unless this.devoured}}
       <li>
@@ -19,9 +25,13 @@
   {{/each}}
 </ul>
 
-<h2>Burgers that are devoured!</h2>
+</div>
 
-<ul>
+<div class="theDevouredChoices">
+
+<h2 id="devouredChoices">Burgers that are devoured!</h2>
+
+<ul id="devouredChoicesList">
   {{#each burgers}}
     {{#if this.devoured}}
       <li>
@@ -35,6 +45,12 @@
     {{/if}}
   {{/each}}
 </ul>
+
+</div>
+
+</div>
+
+<div class="addBurger">
 
 <h2>Add a Burger</h2>
 <form class="create-update-form" action="burgers/create" method="POST">
@@ -52,3 +68,5 @@
 
   <button type="submit">Add Burger</button>
 </form>
+
+</div>
