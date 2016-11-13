@@ -4,7 +4,7 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless this.sleepy}}
+    {{#unless this.devoured}}
       <li>
         {{this.name}}
 
@@ -23,7 +23,7 @@
 
 <ul>
   {{#each burgers}}
-    {{#if this.sleepy}}
+    {{#if this.devoured}}
       <li>
         {{this.name}}
 
